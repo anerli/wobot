@@ -15,7 +15,7 @@ def workout(work_mgroups,diff,goal) :
     #
     # new_mgroups is passed to database
 
-    
+
 
     all_zeroes=0
     for i in range(len(arrA)):
@@ -31,8 +31,8 @@ def workout(work_mgroups,diff,goal) :
         # work_mgroups stays the same
         arrA= list(str(work_mgroups))
         for i in range(len(newarrA)):
-            newarrA[i]=0  
-            
+            newarrA[i]=0
+
 
     # default settings
     modif = [1,1,1,1,1,1,1,1,1,1]
@@ -58,10 +58,8 @@ def workout(work_mgroups,diff,goal) :
     if  diff=="arnold" :
         mult=10
     a=0
-    
     msg = "\nHere's your workout:\n"
     if  int(arrA[0])==1 :
-
         # Cardio
         n=random.choice([1,2,3])
         if  n==1 :
