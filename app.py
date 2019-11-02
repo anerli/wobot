@@ -71,7 +71,7 @@ def index():
 
 #@app.route('/update_worked_mgroups', methods=['POST'])
 '''
-Called by shedule_tools
+Called by schedule_tools
 '''
 def update_worked_mgroups(phone_number, new_worked_mgroups):
     pass
