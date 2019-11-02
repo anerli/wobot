@@ -24,4 +24,4 @@ def select_muscle_groups():
     return s
 
 if __name__=="__main__":
-    print(genmusclegroups())
+    print(select_muscle_groups())

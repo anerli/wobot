@@ -2,7 +2,7 @@ import msg_gen
 from datetime import datetime
 import twilio_tools
 import time
-from app import update_worked_mgroups
+import app
 
 '''
 Run once when server up
@@ -36,13 +36,15 @@ def schedule_message_sends(scheduler, usersettingsarr):
         #time = [h1, h2, m1, m2]
 
         hour = str(time[0]) + str(time[1])
-        minute = str(time[2]) + str(time[3])
+        minute = str(time[3]) + str(time[4])
+
+        print("\n---Scheduling text to be sent:---\n Num: {}\n Message: {}\nHour: {}\n Minute: {}\n".format(num, msg, hour, minute))
 
 
         scheduler.add_job(func=lambda: twilio_tools.send_message(msg, num), \
-            trigger="date", run_date=datetime(datetime.now[0], datetime.now[1], datetime.now[2], hour, minute, 0))
+            trigger="date", id=num, run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
         
-        update_worked_mgroups(num, new_worked_mgroups)
+        app.update_worked_mgroups(num, new_worked_mgroups)
 
         
 
