@@ -1,9 +1,10 @@
-from genmusclegroups import select_muscle_groups
+from api import select_muscle_groups
 def workout(work_mgroups,diff,goal) :
     s = str(work_mgroups)
     arrA=list(s)
-    newarrA=[1,1,1,1,1,1,1,1,1,1]
-
+    newarrA=[]
+    for i in range(len(work_mgroups)):
+        newarrA[i]=1
     #if work_mgroups is all 0s:
     #   work_mgroups = generate random mgroups (Caden)
     #   new_mgroups = inverse(Caden random shit)
@@ -21,7 +22,7 @@ def workout(work_mgroups,diff,goal) :
         # all 0s
         arrA =list(str(select_muscle_groups()))
         for i in range(len(newarrA)):
-            newarrA[i]=newarrA[i]-int(arrA[i])
+            newarrA[i]=int(newarrA[i])-int(arrA[i])
     else:
         # work_mgroups stays the same
         arrA= list(str(work_mgroups))
