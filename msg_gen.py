@@ -1,6 +1,9 @@
 def workout(work_mgroups,diff,goal):
     s = str(work_mgroups)
     arrA=list(s)
+    newarrA=[1,1,1,1,1,1,1,1,1,1]
+    for(i in range(len(newarrA))):
+        newarrA[i]=newarrA[i]-arrA[i]
 
     # default settings
     modif = [1,1,1,1,1,1,1,1,1,1]
@@ -113,4 +116,6 @@ def workout(work_mgroups,diff,goal):
             msg+="Standing Calf Raise: " + str(int(thresh[a]*mult*modif[a]*60))+" Reps\n"
         if(n==2):
             msg+="Sitting Calf Raise: " + str(int(thresh[a]*mult*modif[a]*60))+" Reps\n"
+    
+    return msg,str(newarrA)
 
