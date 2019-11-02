@@ -17,6 +17,6 @@ def send_message(msg, num):
                         to = '+1' + str(num)
                         #  to='+15157718408'
                     )
-
+    print("Twilio: Sending message '{}' to '{}'".format(msg, str(num)))
     print(message.sid)
 

@@ -58,8 +58,10 @@ def workout(work_mgroups,diff,goal) :
     if  diff=="arnold" :
         mult=10
     a=0
+    
     msg = "\nHere's your workout:\n"
     if  int(arrA[0])==1 :
+
         # Cardio
         n=random.choice([1,2,3])
         if  n==1 :

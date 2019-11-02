@@ -4,6 +4,8 @@ from twilio_tools import send_message
 from flask_apscheduler import APScheduler
 import schedule_tools
 import time
+from datetime import datetime
+import twilio_tools
 
 app = Flask(__name__)
 
@@ -24,11 +26,16 @@ class User_db (db.Model):
     difficulty = db.Column(db.String())
     goal = db.Column(db.String())
     time = db.Column(db.Integer)
+
+    def __repr__(self):
+        return "Last worked muscle groups: {}\nNum: {}\nDifficulty: {}\nGoal: {}\n Time: {}".format(\
+            self.last_worked_mgroups, self.phone_number, self.difficulty, self.goal, self.time)
     
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        print("Got POST request to /")
         #msg = request.form['msg']
         #num = request.form['num']
         #send_message(msg, num)
@@ -43,10 +50,10 @@ def index():
         new_user_settings.goal = request.form['goal']
         new_user_settings.time = request.form['time']
         
-        print("TIME: \n" + str(new_user_settings.time))
-        print(new_user_settings.time)
-        print("TIME1: \n" + str(new_user_settings.time[0]))
-        print("TIME2: \n" + str(new_user_settings.time[1]))
+        #print("TIME: \n" + str(new_user_settings.time))
+        #print(new_user_settings.time)
+        #print("TIME1: \n" + str(new_user_settings.time[0]))
+        #print("TIME2: \n" + str(new_user_settings.time[1]))
 
         #print(new_user_settings.phone_number)
 
@@ -63,6 +70,7 @@ def index():
         User_db.query.filter(User_db.phone_number == new_user_settings.phone_number).delete()
         
 
+        print("Scheduling message for " + str(new_user_settings.phone_number) + " at " + str(new_user_settings.time))
         schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
 
         db.session.add(new_user_settings)
@@ -85,15 +93,37 @@ def update_worked_mgroups(phone_number, new_worked_mgroups):
 
 
 def print_date_time():
+    print()
     print(time.strftime("%A, %d. %B %Y %I:%M:%S %p"))
+
+def print_all():
+    print(User_db.query.all())
 
 if __name__ == '__main__':
     #schedule_tools.schedule_the_message_send_scheduler(scheduler)
     #scheduler.add_job(func=print_date_time, trigger="interval", seconds=3, id='dateprinter')
 
     scheduler.add_job(func=lambda: schedule_tools.schedule_message_sends(scheduler, User_db.query.all()), trigger="cron", hour=0, id='dateprinter')
+    
+    scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
+    scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
+
+
+    #sheduler.add_job()
+    hour = 18
+    minute = 55
+    # does not work nevermind does?
+    scheduler.add_job(func=lambda: twilio_tools.send_message("\nThis is a test\n", "3195411516"), \
+            trigger="date", id="testthing", run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
+    
+    #print("AAAAAAAAAAAAAAAAAA")
+    #twilio_tools.send_message("Fuck you","3195411516")
+
     scheduler.start()
 
+
+
     # Remember to take off debug mode on upload. This also fixes sheduler running things twice
-    app.run(debug = True)
+    app.run(debug = False)
+    #app.run(debug = True)
     
