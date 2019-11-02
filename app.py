@@ -13,7 +13,10 @@ class User_db (db.Model):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        return redirect('/')
+    else:
+        return render_template('index.html')
 
 @app.route('/sms',methods=['POST'])
 def sms():
