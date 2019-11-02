@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from twilio import twiml
 
 app = Flask(__name__)
 
@@ -13,6 +14,16 @@ class User_db (db.Model):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
+
+@app.route('/sms',methods=['POST'])
+def sms():
+    number = request.form['From']
+    message_body = request.form['Body']
+
+    resp = twiml.Response()
+    resp.message('Hello {}, you said: {}'.format(number, message_body))
+    return str(resp)
+
 
 if __name__ == '__main__':
     app.run(debug = True)
