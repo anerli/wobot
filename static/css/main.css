@@ -1,17 +1,28 @@
 body {
     background-color: #25272c
+    z-index: 100;
+    position: relative;
 }
 
 h1, label {
     color: #ffffff
+    z-index: 100;
+    position: relative;
+
 }
 
 .content{
     text-align: center;
+    z-index: 100;
+    position: relative;
+
 }
 
 form{
     display: inline;
+    z-index: 100;
+    position: relative;
+
 }
 
 button{
@@ -19,15 +30,21 @@ button{
     color: white;
     background-color: rgb(69, 69, 179);
     padding: 5px;
-    
+    z-index: 100;
+    position: relative;
+
 }
 
 input:invalid {
     border: 2px dashed red;
+    position: relative;
+
   }
   
 input:valid {
     border: 2px solid green;
+    position: relative;
+
 }
 
 
@@ -36,4 +53,13 @@ label {
     margin-bottom: 20px;
     padding:20px;
     float: center;
+    z-index: 100;
+    position: relative;
+
+}
+
+img {
+    z-index: 1;
+    position: relative;
+
 }

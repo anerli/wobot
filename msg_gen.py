@@ -21,7 +21,7 @@ def workout(work_mgroups,diff,goal) :
         # all 0s
         arrA =list(str(select_muscle_groups()))
         for i in range(len(newarrA)):
-            newarrA[i]=newarrA[i]-arrA[i]
+            newarrA[i]=str(int(newarrA[i])-int(arrA[i]))
     else:
         # work_mgroups stays the same
         arrA= lsit(str(work_mgroups))
