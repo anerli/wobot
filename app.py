@@ -18,7 +18,7 @@ class User_db (db.Model):
 
     # string of 1's and 0's in a particular order to denote which muscle groups have been used
     # '10' is number muscle groups
-    last_worked_mgroups = db.Column(db.String(10), default='1111100000')
+    last_worked_mgroups = db.Column(db.String(10), default='0000000000')
 
     phone_number = db.Column(db.String(10), primary_key=True)
     difficulty = db.Column(db.String())
@@ -58,7 +58,7 @@ def index():
         User_db.query.filter(User_db.phone_number == new_user_settings.phone_number).delete()
         
 
-        schedule_tools.schedule_message_sends(scheduler, new_user_settings)
+        schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
 
         db.session.add(new_user_settings)
         db.session.commit()

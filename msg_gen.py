@@ -1,4 +1,4 @@
-from api.py import select_muscle_groups
+from api import select_muscle_groups
 def workout(work_mgroups,diff,goal) :
     s = str(work_mgroups)
     arrA=list(s)
@@ -12,6 +12,7 @@ def workout(work_mgroups,diff,goal) :
     #   new_mgroups = all zeros
     #
     # new_mgroups is passed to database
+    all_zeroes=0
     for i in range(len(arrA)):
         if (arrA[i]==1):
             all_zeros=1
