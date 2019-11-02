@@ -2,7 +2,7 @@ def workout(work_mgroups,diff,goal):
     s = str(work_mgroups)
     arrA=list(s)
     newarrA=[1,1,1,1,1,1,1,1,1,1]
-    for(i in range(len(newarrA))):
+    for i in range(len(newarrA)):
         newarrA[i]=newarrA[i]-arrA[i]
 
     # default settings
