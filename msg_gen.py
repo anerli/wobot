@@ -2,6 +2,24 @@ def workout(work_mgroups,diff,goal):
     s = str(work_mgroups)
     arrA=list(s)
     newarrA=[1,1,1,1,1,1,1,1,1,1]
+
+    #if work_mgroups is all 0s:
+    #   work_mgroups = generate random mgroups (Caden)
+    #   new_mgroups = inverse(Caden random shit)
+    #else:
+    #   work_mgroups = what we were passsed
+    #   new_mgroups = all zeros
+    #   
+    # new_mgroups is passed to database
+
+    if 1 not in work_mgroups:
+        # all 0s
+        work_mgroups = caden()
+        new_mgroups = inverse(work_mgroups)
+    else:
+        # work_mgroups stays the same
+        new_mgroups = all_zeroes
+
     for i in range(len(newarrA)):
         newarrA[i]=newarrA[i]-arrA[i]
 
