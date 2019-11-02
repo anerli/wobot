@@ -46,10 +46,18 @@
 
         <br />
 
+        <!--
         <div>
             <label>
                 Workout Time (Hour, 0-23):
-                <input type="text" name="time" id="time", maxlength="2", pattern="\d{1-2}", required>
+                <input type="text" name="time" id="time", maxlength="2", pattern="([0-9]|([1][0-9])|[2][0-3])", required>
+            </label>
+        </div>
+        -->
+        <div>
+            <label>
+                Workout Time:
+                <input type="time" name="time" id="time" required>
             </label>
         </div>
         
