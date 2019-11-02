@@ -16,7 +16,7 @@ def select_muscle_groups():
         #grab muscle groups which haven't been done this cycle
         j = random.choice(indexList)
 
-        del indexList[j]
+        del indexList[indexList.index(j)]
         uwlist[j] = '1'
 
     return "".join(uwlist)
