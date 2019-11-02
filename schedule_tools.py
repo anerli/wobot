@@ -40,7 +40,7 @@ def schedule_message_sends(scheduler, usersettingsarr):
 
 
         scheduler.add_job(func=lambda: twilio_tools.send_message(msg, num), \
-            trigger="date", run_date=datetime(datetime.now(0), datetime.now(1), datetime.now(2), hour, minute, 0))
+            trigger="date", run_date=datetime(datetime.now[0], datetime.now[1], datetime.now[2], hour, minute, 0))
         
         update_worked_mgroups(num, new_worked_mgroups)
 
