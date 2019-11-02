@@ -23,6 +23,7 @@ class User_db (db.Model):
     phone_number = db.Column(db.String(10), primary_key=True)
     difficulty = db.Column(db.String())
     goal = db.Column(db.String())
+    time = db.Column(db.Integer)
     
 
 @app.route('/', methods=['GET', 'POST'])
@@ -40,6 +41,7 @@ def index():
         new_user_settings.phone_number = request.form['phone_number']
         new_user_settings.difficulty = request.form['difficulty']
         new_user_settings.goal = request.form['goal']
+        new_user_settings.time = request.form['time']
 
         #print(new_user_settings.phone_number)
 
