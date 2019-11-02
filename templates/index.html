@@ -32,7 +32,7 @@
         </div>
 
         <br />
-        
+
         <div>
             <label>Goal:
                 <select name="goal" id="goal" form="settingsform">
@@ -45,7 +45,16 @@
         </div>
 
         <br />
+
+        <div>
+            <label>
+                Workout Time (Hour, 0-23):
+                <input type="text" name="time" id="time", maxlength="2", pattern="\d{1-2}", required>
+            </label>
+        </div>
         
+        <br />
+
         <div>
             <button type="submit">Remind me to get swole!</button>
         </div>
