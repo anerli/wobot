@@ -1,4 +1,5 @@
-def workout(work_mgroups,diff,goal :
+from api.py import select_muscle_groups
+def workout(work_mgroups,diff,goal) :
     s = str(work_mgroups)
     arrA=list(s)
     newarrA=[1,1,1,1,1,1,1,1,1,1]
@@ -11,17 +12,21 @@ def workout(work_mgroups,diff,goal :
     #   new_mgroups = all zeros
     #
     # new_mgroups is passed to database
+    for i in range(len(arrA)):
+        if (arrA[i]==1):
+            all_zeros=1
 
-    if 1 not in work_mgroups:
+    if all_zeroes==0:
         # all 0s
-        work_mgroups = caden()
-        new_mgroups = inverse(work_mgroups)
+        arrA =list(str(select_muscle_groups()))
+        for i in range(len(newarrA)):
+            newarrA[i]=newarrA[i]-arrA[i]
     else:
         # work_mgroups stays the same
-        new_mgroups = all_zeroes
-
-    for i in range(len(newarrA)):
-        newarrA[i]=newarrA[i]-arrA[i]
+        arrA= lsit(str(work_mgroups))
+        for i in range(len(newarrA)):
+            newarrA[i]=0  
+            
 
     # default settings
     modif = [1,1,1,1,1,1,1,1,1,1]
