@@ -20,12 +20,3 @@ def select_muscle_groups():
         uwlist[j] = '1'
 
     return "".join(uwlist)
-
-
-def main():
-    print(select_muscle_groups())
-
-if __name__ == "__main__":
-    # execute only if run as a script
-    main()
-
