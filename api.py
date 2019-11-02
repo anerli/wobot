@@ -9,7 +9,7 @@ def select_muscle_groups():
     #create a list with 10 '0's in it.
     for i in range(MUSCLE_GROUPS):
         uwlist.append('0')
-        indexList.append(i);
+        indexList.append(i)
 
     #pick a 5 muscle groups workout
     for i in range(5):
@@ -20,3 +20,6 @@ def select_muscle_groups():
         uwlist[j] = '1'
 
     return "".join(uwlist)
+
+if __name__ == "__main__":
+    print(select_muscle_groups())

@@ -1,4 +1,4 @@
-from api import select_muscle_groups
+from genmusclegroups import select_muscle_groups
 def workout(work_mgroups,diff,goal) :
     s = str(work_mgroups)
     arrA=list(s)

@@ -1,11 +1,11 @@
 body {
-    background-color: #25272c
+    background-color: #25272c;
     z-index: 100;
     position: relative;
 }
 
 h1, label {
-    color: #ffffff
+    color: #ffffff;
     z-index: 100;
     position: relative;
 

@@ -42,6 +42,11 @@ def index():
         new_user_settings.difficulty = request.form['difficulty']
         new_user_settings.goal = request.form['goal']
         new_user_settings.time = request.form['time']
+        
+        print("TIME: \n" + str(new_user_settings.time))
+        print(new_user_settings.time)
+        print("TIME1: \n" + str(new_user_settings.time[0]))
+        print("TIME2: \n" + str(new_user_settings.time[1]))
 
         #print(new_user_settings.phone_number)
 

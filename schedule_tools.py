@@ -33,10 +33,14 @@ def schedule_message_sends(scheduler, usersettingsarr):
         time = usersettings.time
 
 
-        #time 0-23
+        #time = [h1, h2, m1, m2]
+
+        hour = str(time[0]) + str(time[1])
+        minute = str(time[2]) + str(time[3])
+
 
         scheduler.add_job(func=lambda: twilio_tools.send_message(msg, num), \
-            trigger="date", run_date=datetime(datetime.now(0), datetime.now(1), datetime.now(2), time, 0, 0))
+            trigger="date", run_date=datetime(datetime.now(0), datetime.now(1), datetime.now(2), hour, minute, 0))
         
         update_worked_mgroups(num, new_worked_mgroups)
 
