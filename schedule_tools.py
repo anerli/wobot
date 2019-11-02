@@ -16,8 +16,8 @@ Takes in the db's us
 Return new lask_worked_mgroups string
 '''
 def schedule_message_sends(scheduler, usersettingsarr):
-    
+    print(usersettingsarr)
 
-
+    new_last_work_mgroups = '1111100000'
     return new_last_work_mgroups
-    pass
+    

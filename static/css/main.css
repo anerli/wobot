@@ -1,3 +1,11 @@
+body {
+    background-color: #25272c
+}
+
+h1, label {
+    color: #ffffff
+}
+
 .content{
     text-align: center;
 }
@@ -8,9 +16,10 @@ form{
 
 button{
     float: center;
-    color: black;
-    background-color: rgb(176, 250, 204);
+    color: white;
+    background-color: rgb(69, 69, 179);
     padding: 5px;
+    
 }
 
 input:invalid {
@@ -18,7 +27,7 @@ input:invalid {
   }
   
 input:valid {
-    border: 2px solid black;
+    border: 2px solid green;
 }
 
 
