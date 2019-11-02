@@ -9,6 +9,7 @@ def workout(work_mgroups,diff,goal):
     modif = [1,1,1,1,1,1,1,1,1,1]
     mult = 1
     #
+    
     thresh = [2,1,1,1,1,1,1,1,1,1]
     if(goal=="massgain"):
         modif = [.8,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5]
