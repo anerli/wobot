@@ -94,7 +94,7 @@ def index():
         # etc...
 
         #return redirect('success.html')
-        return render_template('success.html')
+        return render_template('success.html', time=new_user_settings.time)
     else:
         return render_template('index.html')
 
@@ -155,6 +155,6 @@ if __name__ == '__main__':
 
 
     # Remember to take off debug mode on upload. This also fixes sheduler running things twice
-    app.run(debug = False)
+    app.run(debug = True)
     #app.run(debug = True)
     
