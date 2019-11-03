@@ -94,7 +94,7 @@ def index():
         # etc...
 
         #return redirect('success.html')
-        return render_template('success.html', time=new_user_settings.time)
+        return render_template('success.html', time=new_user_settings.time, img=random.choice(["TerminatorThumbsUp.png"]))
     else:
         return render_template('index.html')
 
