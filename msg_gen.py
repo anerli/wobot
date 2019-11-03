@@ -41,6 +41,7 @@ def workout(work_mgroups,diff,goal) :
 
     thresh = [2,1,1,1,1,1,1,1,1,1]
     if goal=="massgain":
+        modif = [0.8,1.6,1.6,1.6,1.6,1.6,1.6,1.6,1.6,1.6]
 
     if goal=="weightloss":
         modif = [2,.6,.6,.6,.6,.6,.6,.6,.6,.6]
