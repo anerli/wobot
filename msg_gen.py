@@ -146,4 +146,9 @@ def workout(work_mgroups,diff,goal) :
             msg+="Standing Calf Raise: " + str(int(thresh[9]*mult*modif[9]*60))+" Reps\n"
         if  n==2 :
             msg+="Sitting Calf Raise: " + str(int(thresh[9]*mult*modif[9]*60))+" Reps\n"
-    return msg,str(newarrA)
+
+    s = ""
+    for n in newarrA:
+        s+=str(n)
+
+    return msg, s
