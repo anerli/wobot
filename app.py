@@ -94,6 +94,9 @@ def index():
 Called by schedule_tools
 '''
 def update_worked_mgroups(phone_number, new_worked_mgroups):
+    #userset = User_db.query.filter(User_db.phone_number==phone_number).first()
+    #userset.last_worked_mgroups = new_worked_mgroups
+    #db.session.commit()
     pass
 
 
@@ -110,16 +113,16 @@ if __name__ == '__main__':
 
     scheduler.add_job(func=lambda: schedule_tools.schedule_message_sends(scheduler, User_db.query.all()), trigger="cron", hour=0, id='dateprinter')
     
-    scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
-    scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
+    #scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
+    #scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
 
 
-    #sheduler.add_job()
-    hour = 18
-    minute = 55
+    
+    #hour = 18
+    #minute = 55
     # does not work nevermind does?
-    scheduler.add_job(func=lambda: twilio_tools.send_message("\nThis is a test\n", "3195411516"), \
-            trigger="date", id="testthing", run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
+    #scheduler.add_job(func=lambda: twilio_tools.send_message("\nThis is a test\n", "3195411516"), \
+    #        trigger="date", id="testthing", run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
     
     #print("AAAAAAAAAAAAAAAAAA")
     #twilio_tools.send_message("Fuck you","3195411516")
