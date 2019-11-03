@@ -41,7 +41,7 @@ def workout(work_mgroups,diff,goal) :
 
     thresh = [2,1,1,1,1,1,1,1,1,1]
     if goal=="massgain":
-        modif = [.8,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5]
+        modif = [.8,1.6,1.6,1.6,1.6,1.6,1.6,1.6,1.6,1.6]
 
     if goal=="weightloss":
         modif = [2,.6,.6,.6,.6,.6,.6,.6,.6,.6]
@@ -147,9 +147,9 @@ def workout(work_mgroups,diff,goal) :
         if  n==2 :
             msg+="Sitting Calf Raise: " + str(int(thresh[9]*mult*modif[9]*45))+" Reps\n"
     
-    # print(msg)
+    print(msg)
 
     return msg,str(newarrA)
 
-# if __name__ == "__main__":
-#     workout('0000000000', ' ',' ')
+if __name__ == "__main__":
+    workout('0000000000', ' ','massgain')
