@@ -18,6 +18,15 @@ h1, label {
 
 }
 
+.subContent {
+    position: absolute;
+    top: 30%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 form{
     display: inline;
     z-index: 100;
@@ -44,7 +53,6 @@ input:invalid {
 input:valid {
     border: 2px solid green;
     position: relative;
-
 }
 
 
@@ -52,14 +60,11 @@ input:valid {
 label {
     margin-bottom: 20px;
     padding:20px;
-    float: center;
+    float: none;
     z-index: 100;
     position: relative;
-
 }
 
 img {
-    z-index: 1;
     position: relative;
-
 }
