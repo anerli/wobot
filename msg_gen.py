@@ -75,9 +75,9 @@ def workout(work_mgroups,diff,goal) :
         # Back
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Chin-Ups: " + str(int(thresh[1]*mult*modif[1]*30))+" Reps\n"
+            msg+="Chin-Ups: " + str(int(thresh[1]*mult*modif[1]*15))+" Reps\n"
         if  n==2 :
-            msg+="Pull-Ups: " + str(int(thresh[1]*mult*modif[1]*30))+" Reps\n"
+            msg+="Pull-Ups: " + str(int(thresh[1]*mult*modif[1]*15))+" Reps\n"
 
     a+=1
 
@@ -85,9 +85,9 @@ def workout(work_mgroups,diff,goal) :
         # Core
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Sit-Ups: " + str(int(thresh[2]*mult*modif[2]*60))+" Reps\n"
+            msg+="Sit-Ups: " + str(int(thresh[2]*mult*modif[2]*50))+" Reps\n"
         if  n==2 :
-            msg+="Planking: " + str(int(thresh[2]*mult*modif[2]*15))+" Minutes\n"
+            msg+="Planking: " + str(int(thresh[2]*mult*modif[2]*10))+" Minutes\n"
 
     a+=1
 
@@ -95,27 +95,27 @@ def workout(work_mgroups,diff,goal) :
         # Chest
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Push-Ups: " + str(int(thresh[3]*mult*modif[3]*60))+" Reps\n"
+            msg+="Push-Ups: " + str(int(thresh[3]*mult*modif[3]*50))+" Reps\n"
         if  n==2 :
-            msg+="Bench Press: " + str(int(thresh[3]*mult*modif[3]*30))+" Reps\n"
+            msg+="Bench Press: " + str(int(thresh[3]*mult*modif[3]*15))+" Reps\n"
 
     a+=1
 
     if  int(arrA[4])==1 :
         # Biceps
-        msg+="Curls: " + str(int(thresh[4]*mult*modif[4]*45))+" Reps\n"
+        msg+="Curls: " + str(int(thresh[4]*mult*modif[4]*25))+" Reps\n"
 
     a+=1
 
     if  int(arrA[5])==1 :
         # Triceps
-        msg+="Dips: " + str(int(thresh[5]*mult*modif[5]*45))+" Reps\n"
+        msg+="Dips: " + str(int(thresh[5]*mult*modif[5]*15))+" Reps\n"
 
     a+=1
 
     if  int(arrA[6])==1 :
         # Shoulders
-        msg+="Front Raises: " + str(int(thresh[6]*mult*modif[6]*45))+" Reps\n"
+        msg+="Front Raises: " + str(int(thresh[6]*mult*modif[6]*20))+" Reps\n"
 
     a+=1
 
@@ -123,9 +123,9 @@ def workout(work_mgroups,diff,goal) :
         # Quads
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Leg Press: " + str(int(thresh[7]*mult*modif[7]*30))+" Reps\n"
+            msg+="Leg Press: " + str(int(thresh[7]*mult*modif[7]*15))+" Reps\n"
         if  n==2 :
-            msg+="Lunges: " + str(int(thresh[7]*mult*modif[7]*60))+" Reps\n"
+            msg+="Lunges: " + str(int(thresh[7]*mult*modif[7]*50))+" Reps\n"
 
     a+=1
 
@@ -133,9 +133,9 @@ def workout(work_mgroups,diff,goal) :
         # Glutes
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Squat: " + str(int(thresh[8]*mult*modif[8]*30))+" Reps\n"
+            msg+="Squat: " + str(int(thresh[8]*mult*modif[8]*15))+" Reps\n"
         if  n==2 :
-            msg+="Deadlift: " + str(int(thresh[8]*mult*modif[8]*30))+" Reps\n"
+            msg+="Deadlift: " + str(int(thresh[8]*mult*modif[8]*15))+" Reps\n"
 
     a+=1
 
@@ -143,12 +143,17 @@ def workout(work_mgroups,diff,goal) :
         # Calves
         n=random.choice([1,2])
         if  n==1 :
-            msg+="Standing Calf Raise: " + str(int(thresh[9]*mult*modif[9]*60))+" Reps\n"
+            msg+="Standing Calf Raise: " + str(int(thresh[9]*mult*modif[9]*45))+" Reps\n"
         if  n==2 :
-            msg+="Sitting Calf Raise: " + str(int(thresh[9]*mult*modif[9]*60))+" Reps\n"
+            msg+="Sitting Calf Raise: " + str(int(thresh[9]*mult*modif[9]*45))+" Reps\n"
 
+    # print(msg)
     s = ""
     for n in newarrA:
         s+=str(n)
 
     return msg, s
+
+# if __name__ == "__main__":
+#     workout('0000000000', ' ',' ')
+>>>>>>> master
