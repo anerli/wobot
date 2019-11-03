@@ -59,30 +59,46 @@ def workout(work_mgroups,diff,goal) :
         mult=10
     a=0
     msg = "\nArnold Says:\n"
-    cardio=0
     if  int(arrA[0])==1 :
         # Cardio
         n=random.choice([1,2,3])
         if  n==1 :
-            if(thresh[0]*mult*modif[0]%1!=0):
-                if(thresh[0]*mult*modif[0]%1<.5):
+            
+            if((thresh[0]*mult*modif[0])%1)!=0:
+                if((thresh[0]*mult*modif[0])%1)<=.4:
                     cardio=int(thresh[0]*mult*modif[0])
                 else:
                     cardio=int(thresh[0]*mult*modif[0])+1
+            else:
+                cardio=int(thresh[0]*mult*modif[0])
+            if cardio==0:
+                cardio=1
             msg+="Run: " + str(cardio)+" miles\n"
+        
         if  n==2 :
-            if(.5*thresh[0]*mult*modif[0]%1!=0):
-                if(.5*thresh[0]*mult*modif[0]%1<.5):
+            
+            if((.5*thresh[0]*mult*modif[0])%1)!=0:
+                if((.5*thresh[0]*mult*modif[0])%1)<=.4:
                     cardio=int(.5*thresh[0]*mult*modif[0])
                 else:
                     cardio=int(.5*thresh[0]*mult*modif[0])+1
+            else:
+                cardio=int(thresh[0]*mult*modif[0]*.5)
+            if cardio==0:
+                cardio=1
             msg+="Swim: " + str(cardio)+" miles\n"
+        
         if  n==3 :
-            if(2*thresh[0]*mult*modif[0]%1!=0):
-                if(2*thresh[0]*mult*modif[0]%1<.5):
+            
+            if((2*thresh[0]*mult*modif[0])%1)!=0:
+                if((2*thresh[0]*mult*modif[0])%1)<=.4:
                     cardio=int(2*thresh[0]*mult*modif[0])
                 else:
                     cardio=int(2*thresh[0]*mult*modif[0])+1
+            else:
+                cardio=int(thresh[0]*mult*modif[0]*2)
+            if cardio==0:
+                cardio=1
             msg+="Bike: " + str(cardio)+" miles\n"
 
     a+=1
@@ -163,9 +179,9 @@ def workout(work_mgroups,diff,goal) :
         if  n==2 :
             msg+="Sitting Calf Raise: 3 sets of " + str(int(thresh[9]*mult*modif[9]*15))+" Reps\n"
     
-    # print(msg)
+    print(msg)
 
     return msg,str(newarrA)
 
-# if __name__ == "__main__":
-#     workout('0000000000', ' ','weightloss')
+if __name__ == "__main__":
+    workout('0000000000', ' ',' ')
