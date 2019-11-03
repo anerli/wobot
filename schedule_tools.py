@@ -40,7 +40,7 @@ def schedule_message_sends(scheduler, usersettingsarr):
         hour = str(time[0]) + str(time[1])
         minute = str(time[3]) + str(time[4])
 
-        print("\n---Scheduling text to be sent:---\n Num: {}\n Message: {}\nHour: {}\n Minute: {}\n".format(num, msg, hour, minute))
+        print("\n---Scheduling text to be sent:---\n Num: {}\n Message: {}\nHour: {}\nMinute: {}\n".format(num, msg, hour, minute))
 
         jobs = scheduler.get_jobs()
         scheduled_numbers = []
