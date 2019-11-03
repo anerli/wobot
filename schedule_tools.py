@@ -27,6 +27,7 @@ def schedule_message_sends(scheduler, usersettingsarr):
     
 
     for usersettings in usersettingsarr:
+        print(usersettings.last_worked_mgroups)
         msg, new_worked_mgroups = msg_gen.workout(usersettings.last_worked_mgroups,usersettings.difficulty,usersettings.goal)
 
         num = usersettings.phone_number

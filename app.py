@@ -69,6 +69,11 @@ def index():
             #db.session.remove()
         User_db.query.filter(User_db.phone_number == new_user_settings.phone_number).delete()
         
+        #print("lwmg: " +  new_user_settings.last_worked_mgroups)
+        #jank
+        if not new_user_settings.last_worked_mgroups:
+            new_user_settings.last_worked_mgroups = '0000000000'
+
 
         print("Scheduling message for " + str(new_user_settings.phone_number) + " at " + str(new_user_settings.time))
         schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
@@ -124,6 +129,6 @@ if __name__ == '__main__':
 
 
     # Remember to take off debug mode on upload. This also fixes sheduler running things twice
-    app.run(debug = False)
+    app.run(debug = True)
     #app.run(debug = True)
     
