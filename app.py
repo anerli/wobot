@@ -136,8 +136,8 @@ if __name__ == '__main__':
     #scheduler.add_job(func=lambda: schedule_tools.schedule_message_sends(scheduler, User_db.query.all()), trigger="cron", hour=0, id='dateprinter')
     scheduler.add_job(func=schedule_all, trigger="cron", hour=0, id='dateprinter')
 
-    scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
-    scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
+    #scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
+    #scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
 
 
     
@@ -154,6 +154,6 @@ if __name__ == '__main__':
 
 
     # Remember to take off debug mode on upload. This also fixes sheduler running things twice
-    app.run(debug = True)
+    app.run(debug = False)
     #app.run(debug = True)
     
