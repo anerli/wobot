@@ -156,6 +156,6 @@ if __name__ == '__main__':
 
 
     # Remember to take off debug mode on upload. This also fixes sheduler running things twice
-    app.run(debug = True)
+    app.run(debug = False)
     #app.run(debug = True)
     
