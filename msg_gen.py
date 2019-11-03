@@ -58,7 +58,7 @@ def workout(work_mgroups,diff,goal) :
     if  diff=="arnold" :
         mult=10
     a=0
-    msg = "\nArnold Says:\n"
+    msg = random.choice(["\nArnold Says:\n","\nArnold Demands:\n","\nArnold Expects:\n","\nArnold Wants:\n"])
     if  int(arrA[0])==1 :
         # Cardio
         n=random.choice([1,2,3])
@@ -177,26 +177,17 @@ def workout(work_mgroups,diff,goal) :
         if  n==1 :
             msg+="Standing Calf Raise: 3 sets of " + str(int(thresh[9]*mult*modif[9]*15))+" Reps\n"
         if  n==2 :
-<<<<<<< HEAD
-            msg+="Sitting Calf Raise: " + str(int(thresh[9]*mult*modif[9]*45))+" Reps\n"
+            msg+="Sitting Calf Raise: 3 sets of " + str(int(thresh[9]*mult*modif[9]*15))+" Reps\n"
+    
+    #print(msg)
 
     # print(msg)
     s = ""
     for n in newarrA:
         s+=str(n)
-=======
-            msg+="Sitting Calf Raise: 3 sets of " + str(int(thresh[9]*mult*modif[9]*15))+" Reps\n"
-    
-    print(msg)
->>>>>>> master
 
     return msg, s
 
-<<<<<<< HEAD
 # if __name__ == "__main__":
 #     workout('0000000000', ' ',' ')
 
-=======
-if __name__ == "__main__":
-    workout('0000000000', ' ',' ')
->>>>>>> master
