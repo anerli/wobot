@@ -76,11 +76,19 @@ def index():
 
 
         print("Scheduling message for " + str(new_user_settings.phone_number) + " at " + str(new_user_settings.time))
-        schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
+        nums, mgroups = schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
+        
+        ##################
+        # Update mgroup ##
+        num = nums[0]
+        new_worked_mgroups = mgroups[0]
+        
+        new_user_settings.last_worked_mgroups = new_worked_mgroups
+        ###################
 
         db.session.add(new_user_settings)
         db.session.commit()
-
+        
         
 
         # etc...
@@ -107,14 +115,29 @@ def print_date_time():
 def print_all():
     print(User_db.query.all())
 
+
+
+def schedule_all():
+    nums, mgroupsarr = schedule_tools.schedule_message_sends(scheduler, User_db.query.all())
+
+    for i in range(len(nums)):
+        num = nums[i]
+        new_worked_mgroups = mgroupsarr[i]
+        
+        userset = User_db.query.filter(User_db.phone_number==num).first()
+        userset.last_worked_mgroups = new_worked_mgroups
+        db.session.commit()
+
+
 if __name__ == '__main__':
     #schedule_tools.schedule_the_message_send_scheduler(scheduler)
     #scheduler.add_job(func=print_date_time, trigger="interval", seconds=3, id='dateprinter')
 
-    scheduler.add_job(func=lambda: schedule_tools.schedule_message_sends(scheduler, User_db.query.all()), trigger="cron", hour=0, id='dateprinter')
-    
-    #scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
-    #scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
+    #scheduler.add_job(func=lambda: schedule_tools.schedule_message_sends(scheduler, User_db.query.all()), trigger="cron", hour=0, id='dateprinter')
+    scheduler.add_job(func=schedule_all, trigger="cron", hour=0, id='dateprinter')
+
+    scheduler.add_job(func=print_date_time, trigger='interval', seconds=5, id="timeprinter")
+    scheduler.add_job(func=print_all, trigger='interval', seconds=5, id="printer")
 
 
     
@@ -125,7 +148,6 @@ if __name__ == '__main__':
     #        trigger="date", id="testthing", run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
     
     #print("AAAAAAAAAAAAAAAAAA")
-    #twilio_tools.send_message("Fuck you","3195411516")
 
     scheduler.start()
 

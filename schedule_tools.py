@@ -24,7 +24,8 @@ Return new lask_worked_mgroups string
 def schedule_message_sends(scheduler, usersettingsarr):
     print(usersettingsarr)
 
-    
+    nums = []
+    new_worked_mgroups_arr = []
 
     for usersettings in usersettingsarr:
         print(usersettings.last_worked_mgroups)
@@ -45,7 +46,10 @@ def schedule_message_sends(scheduler, usersettingsarr):
         scheduler.add_job(func=lambda: twilio_tools.send_message(msg, num), \
             trigger="date", id=num, run_date=datetime(int(datetime.now().year), int(datetime.now().month), int(datetime.now().day), int(hour), int(minute), 0))
         
-        app.update_worked_mgroups(num, new_worked_mgroups)
+        #app.update_worked_mgroups(num, new_worked_mgroups)
+        nums.append(num)
+        new_worked_mgroups_arr.append(new_worked_mgroups)
+    return nums, new_worked_mgroups_arr
 
         
 
