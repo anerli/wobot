@@ -7,65 +7,72 @@
 {% block body %}
 <div class="content">
     <img src="/static/Arnold.png" alt="Arnold Boy">
+<<<<<<< HEAD
+    <div class="subContent">
+        <h1>Arnold Says</h1>
+        <form action='/' method="POST" id="settingsform">
+=======
     <h1>Arnold Says</h1>
     <form action='/' method="POST" id="settingsform">
+>>>>>>> 28e5ae3d9cfd97a93e2e0e9f79eeb65968bbb6d1
         
-        <div>
-            <label>
-                Phone Number:
-                <input type="text" name="phone_number" id="phone_number", maxlength="10", pattern="\d{10}", required>
-            </label>
-        </div>
+            <div>
+                <label>
+                    Phone Number:
+                    <input type="text" name="phone_number" id="phone_number", maxlength="10", pattern="\d{10}", required>
+                </label>
+            </div>
 
-        <br />
+            <br />
 
-        <div>
-            <label>Difficulty:
-                <select name="difficulty" id="difficulty" form="settingsform">
-                    <option value="mild">Mild</option>
-                    <option value="medium" selected="selected">Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="extreme">Extreme</option>
-                    <option value="arnold">Arnold</option>
-                </select>
-            </label>
-        </div>
+            <div>
+                <label>Difficulty:
+                    <select name="difficulty" id="difficulty" form="settingsform">
+                        <option value="mild">Mild</option>
+                        <option value="medium" selected="selected">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="extreme">Extreme</option>
+                        <option value="arnold">Arnold</option>
+                    </select>
+                </label>
+            </div>
 
-        <br />
+            <br />
 
-        <div>
-            <label>Goal:
-                <select name="goal" id="goal" form="settingsform">
-                    <option value="default" selected="selected">Default</option>
-                    <option value="massgain">Muscle Gain</option>
-                    <option value="weightloss">Weight Loss</option>
+            <div>
+                <label>Goal:
+                    <select name="goal" id="goal" form="settingsform">
+                        <option value="default" selected="selected">Default</option>
+                        <option value="massgain">Muscle Gain</option>
+                        <option value="weightloss">Weight Loss</option>
                     
-                </select>
-            </label>
-        </div>
+                    </select>
+                </label>
+            </div>
 
-        <br />
+            <br />
 
-        <!--
-        <div>
-            <label>
-                Workout Time (Hour, 0-23):
-                <input type="text" name="time" id="time", maxlength="2", pattern="([0-9]|([1][0-9])|[2][0-3])", required>
-            </label>
-        </div>
-        -->
-        <div>
-            <label>
-                Workout Time:
-                <input type="time" name="time" id="time" required>
-            </label>
-        </div>
+            <!--
+            <div>
+                <label>
+                    Workout Time (Hour, 0-23):
+                    <input type="text" name="time" id="time", maxlength="2", pattern="([0-9]|([1][0-9])|[2][0-3])", required>
+                </label>
+            </div>
+            -->
+            <div>
+                <label>
+                    Workout Time:
+                    <input type="time" name="time" id="time" required>
+                </label>
+            </div>
         
-        <br />
+            <br />
 
-        <div>
-            <button type="submit">Remind me to get swole!</button>
-        </div>
-    </form>
+            <div>
+                <button type="submit">Remind me to get swole!</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
