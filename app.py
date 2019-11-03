@@ -74,7 +74,7 @@ def index():
         if not new_user_settings.last_worked_mgroups:
             new_user_settings.last_worked_mgroups = '0000000000'
 
-
+        
         print("Scheduling message for " + str(new_user_settings.phone_number) + " at " + str(new_user_settings.time))
         nums, mgroups = schedule_tools.schedule_message_sends(scheduler, [new_user_settings])
         
