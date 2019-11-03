@@ -156,4 +156,4 @@ def workout(work_mgroups,diff,goal) :
 
 # if __name__ == "__main__":
 #     workout('0000000000', ' ',' ')
->>>>>>> master
+

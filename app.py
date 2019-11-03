@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from twilio_tools import send_message
 from flask_apscheduler import APScheduler
@@ -93,7 +93,8 @@ def index():
 
         # etc...
 
-        return redirect('/')
+        #return redirect('success.html')
+        return render_template('success.html')
     else:
         return render_template('index.html')
 
